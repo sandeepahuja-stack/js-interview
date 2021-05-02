@@ -18,3 +18,6 @@ Array.prototype.myFilter = function (callback) {
 let result = ar.myFilter(value=>{
   return value > 2; // return ary [3,4,5,6]
 })
+
+
+

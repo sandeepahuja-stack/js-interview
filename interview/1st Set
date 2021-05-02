@@ -1,0 +1,34 @@
+
+Arr1 = [1,2,3]
+
+Arr1.duplicate()
+
+// [1,2,3,1,2,3]
+
+ [ [[4,5],[6,10],[12,14]], [[4,5],[5,9],[13,16]], [[11,14]] ]
+
+
+
+
+ 
+
+Prototype
+Confuses it with __proto__
+Shares screen without requesting/asking
+Took long time to reach to application of prototypes: Polyfils and new functionalities
+Coding - long silence before starting the question, could have discussed/confirmed input/output format if unfamiliar 
+
+
+Async/defer
+window.onload vs document.ready
+Defer vs last of body tag - right attempt but needs refinement
+
+
+How a webpage renders
+Starts with Painting phase - which is wrong. Should have begun with tokenisation -> Dom tree -> CSSOM -> Render Tree -> Render blocking concept -> Script + async/defer + images
+
+
+Coding question 
+Does not discuss the question - should have confirmed the problem statement, or confirmed the sorting of input data
+Starts coding before discussion
+

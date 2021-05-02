@@ -10,9 +10,12 @@ let result = ar.reduce((ac,el)=>ac+el, 1  ) // 22 output
 // pollyfill
 Array.prototype.myReduce = function (callback, initialValue) {
   let accumulator = initialValue;
+  //  this array ko represent krega
   for (let index = 0; index < this.length; index++) {
     accumulator = callback(accumulator, this[index], index, this);
   }
   return accumulator;
 }
 let result = ar.myReduce((ac,el)=>ac+el, 1  ) // 22
+
+
