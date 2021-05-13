@@ -99,3 +99,27 @@
 
 
 //promise
+
+// function cal () {
+//   let a = 1;
+//   return function () {
+//     console.log(++a);
+//   }
+// }
+// let c = cal();
+// let c1 = cal();
+// c(); 
+// c(); 
+// c1();
+
+
+
+
+Function.prototype.myBind = function (...args) {
+  let context = args[0];
+  let $this = this;
+  let params = args.slice(1);
+  return function (...args1) {
+    $this.apply(context, [...params,...args1]);
+  }
+}

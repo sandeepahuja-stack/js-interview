@@ -1,0 +1,61 @@
+
+
+Array.prototype.myFilter = function (callback) {
+  let result = [];
+  for (let index = 0; index < this.length; index++) {
+    if (callback(this[index],index,this)) { 
+      result.push(this[index]);
+    }
+  }
+  return result;
+}
+
+
+
+Array.prototype.myMap =  function(callback) {
+  let result = [];
+  // this represent array
+  for (let index = 0; index < this.length; index++) {
+    result.push(callback(this[index],index,this));
+  }
+  return result;
+}
+
+
+
+
+Array.prototype.myFind =  function(callback) {
+  
+  // this represent array
+  for (let index = 0; index < this.length; index++) {
+    if(callback(this[index],index,this)) return this[index];
+  }
+  return undefined;
+}
+
+let ar = [1,2,3,4];
+
+// let result = [1,2,3,4].myFind((el)=>{
+//   return el > 4 || el < 1;
+// })
+// console.log(result);
+
+//output : [11, 12, 13, 14, 15, 16]
+
+
+
+Array.prototype.myReduce = function (callback, initialValue) {
+  let accumulator = initialValue;
+  for (let index = 0; index < this.length; index++) {
+    accumulator = callback(accumulator,this[index],index,this)
+    
+  }
+  return accumulator;
+}
+
+
+
+let first = ar.reduce((a,el)=>{ return el-a },1);
+console.log(first)
+
+
