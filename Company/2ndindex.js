@@ -17,16 +17,60 @@ let ar = [1,2,3,4,5];
 
 // console.log(result);
 
-function wait() {
-  return new Promise((resolve)=>{
-    setTimeout(() => {
-      resolve();
-    }, 5000);
-  });
+// function wait() {
+//   return new Promise((resolve)=>{
+//     setTimeout(() => {
+//       resolve();
+//     }, 5000);
+//   });
+// }
+
+// wait().then(()=>{
+//   console.log('hello world');
+// }).catch(()=>{
+//   console.log('some error happen');
+// })
+
+Array.prototype.myMap = function(callback) {
+  let result = [];
+  for(let index = 0; index < this.length; index++) {
+    result.push(callback(this[index], index, this));
+  }
+  return result;
 }
 
-wait().then(()=>{
-  console.log('hello world');
-}).catch(()=>{
-  console.log('some error happen');
-})
+
+Array.prototype.myForEach = function() {
+  for(let index = 0; index < this.length; index++) {
+    callback(this[index], index, this);
+  }
+}
+
+Array.prototype.myFind = function(callback){
+  for(let index = 0; index < this.length; index++) {
+    if(callback(this[index], index, this)){
+      return this[index];
+    }
+  }
+}
+
+
+Array.prototype.myFilter = function(callback){
+  let result = [];
+  for(let index = 0; index < this.length; index++) {
+    if(callback(this[index], index, this)){
+      result.push(this[index]);
+    }
+  }
+  return result;
+}
+
+Array.prototype.myReduce = function(callback, initialValue){
+  let acc = initialValue;
+  for(let index= 0; index< this.length; i++) {
+    acc = callback(acc, this[index], index, this);
+  }
+  return acc;
+}
+
+

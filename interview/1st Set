@@ -5,6 +5,23 @@ Arr1.duplicate()
 
 // [1,2,3,1,2,3]
 
+
+
+const ar = [1,2,3];
+
+Array.prototype.duplicate = function () {
+	let $this = [...this];
+  const length = $this.length;
+    for(let i = 0; i<length; i++ ) {
+	    $this[i+length] = $this[i];
+      }
+	return $this;
+
+}
+
+console.log(ar.duplicate());
+
+
  [ [[4,5],[6,10],[12,14]], [[4,5],[5,9],[13,16]], [[11,14]] ]
 
 
