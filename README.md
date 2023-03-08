@@ -1,3 +1,6 @@
+
+
+
 Q1 : __proto__ vs prototype https://javascript.plainenglish.io/proto-vs-prototype-in-js-140b9b9c8cd5
 Ans 1
 prototype : it is a property of a class 
@@ -300,3 +303,60 @@ https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work
 
 https://overreacted.io/
 https://www.patterns.dev/posts/hoc-pattern/
+
+
+
+
+
+
+
+## Promises
+
+
+| Topic      | Description                |
+| :--------  | :------------------------- |
+| `all`  |  If one promise got rejected then promises will also got rejected |
+|`allSetteled`| It will give us array and check all the promises whether promise get resolved or not|
+
+
+## Event Emitter
+
+## Optimizations Techniques
+```
+  Caching / Memoization 
+  Preventing Memory Leaks 
+  Reusable code (utility/helper func)
+```
+
+
+
+## Call / Apply/ Bind
+
+```
+  Function Borrowing
+```
+| Topic      | Description                |
+| :--------  | :------------------------- |
+| `call`  |    (context, arguments are **comma (,)** seprated) excutes immediately|
+|`apply`|(context, [arguments])  excutes immediately|
+|`bind`|(context, comma seprated)  excutes later when we want|
+
+
+
+
+## Object using Const / Object.freeze
+
+| Topic      | Description                |
+| :--------  | :------------------------- |
+| `Object using const`  |  we cant reassign the whole object, but we can add/ change the key values  |
+|`Object.freeze`|we can add/ change the key values|
+
+
+
+## Map / Weak Map
+
+| Topic      | Description                |
+| :--------  | :------------------------- |
+| `Map`  |  iterable,  hold function, GC doesn't remove key from map |
+|`Weak Map`| not iterable, holds reference, Gc removes the reference from weak map |
+
