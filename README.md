@@ -541,3 +541,32 @@ const useOnClickOutside = (ref, handler) => {
   }, [ref, handler]);
 };
 ```
+
+
+
+### useTimer
+```
+
+const useTimer = () => {
+const [count, updateCount]= useState(0);
+const [flag, updateFlag] = useState(false);
+const startTimer = ()=>{
+ updateFlag(true) 
+}
+const stopTimer = ()=>{
+  updateFlag(false) 
+ }
+  useEffect(()=>{
+    let timer = null;
+    if(flag) {
+      timer = setInterval(()=>{
+        updateCount((count)=>count+1);
+      },100  )
+    } else {
+      clearInterval(timer)
+    }
+    return () => clearInterval(timer)
+  },[flag])
+  return {count, startTimer, stopTimer}
+}
+```
