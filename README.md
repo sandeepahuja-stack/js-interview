@@ -454,6 +454,23 @@ function sum(a = 0) {
 
 const a = sum(1)(2)()
 console.log(a)
+
+
+
+function sum(...args) {
+    let _sum = 0;
+    function curried(...args1) {
+        if (args1.length == 0) {
+            return _sum
+        }
+       _sum += args1.reduce((a,c) => a+c)
+       return curried;
+        
+    }
+    return curried(...args)
+}
+
+console.log(sum(1,2,3)(4,3)())
 ```
 
 
