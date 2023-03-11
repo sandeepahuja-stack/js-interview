@@ -437,3 +437,21 @@ myFunc();
 ## Debounce vs throttle
 ## splice vs slice
 ## Currying 
+```
+console.clear()
+function sum(a = 0) {
+  const s = Object.values(arguments);
+  const sum1 = s.reduce((acc,item)=>acc+item,0);
+   return function(b = null){
+      if(b) {
+        const s2 = Object.values(arguments);
+        const sum2 = s2.reduce((acc,item)=>acc+item,0);
+        return sum(sum1+sum2)
+      } 
+     return a;
+   };
+}
+
+const a = sum(1)(2)()
+console.log(a)
+```
