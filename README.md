@@ -360,3 +360,80 @@ https://www.patterns.dev/posts/hoc-pattern/
 | `Map`  |  iterable,  hold function, GC doesn't remove key from map |
 |`Weak Map`| not iterable, holds reference, Gc removes the reference from weak map |
 
+
+
+
+
+## Null / undefined
+
+| Topic      | Description                |
+| :--------  | :------------------------- |
+| `Null`  |  we can set null  |
+|`undefined`| when accessing a variable which doesn't exist |
+
+
+
+
+## Hoisting
+```
+  Caching / Memoization 
+  Preventing Memory Leaks 
+  Reusable code (utility/helper func)
+```
+
+## Closure
+```
+ A closure is the combination of a function and 
+ the lexical environment within which that function was declared. 
+
+function makeFunc() {
+  const name = "Mozilla";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc();
+```
+
+## Functions
+
+
+| Topic      | Description                |
+| :--------  | :------------------------- |
+| `Anonymous`  |  function without name (function(){})() |
+|`first class function`|  |
+|`function expression`| var b = function(){} , during memory creation phase **b = undefined**|
+|`named function expression`| var b = function add(){} , during memory creation phase **b = undefined**|
+|`function statement`| function a(){}, during Hoisting function will get created |
+
+## First Class Function 
+```
+  
+  var b = function xyz (param){
+    return function () {
+
+    }
+  }
+  b(()=>{
+    
+  })
+```
+
+
+
+## arguments
+
+## Higher Order Functions
+```
+  when we pass function inside function and get return new functionality / data
+
+  map, filter, some, reduce,  
+
+```
+## Higher Order Components
+## Debounce vs throttle
+## splice vs slice
+## Currying 
