@@ -512,3 +512,32 @@ export default function App() {
 }
 
 ```
+
+
+
+### useOnClickOutside 
+```
+
+const useOnClickOutside = (ref, handler) => {
+  useEffect(() => {
+    const listener = (event) => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        console.log("return ");
+        return;
+      }
+      handler(event);
+    };
+    // document.addEventListener("click", listener);
+
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
+
+    return () => {
+      // document.removeEventListener("click", listener);
+
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
+    };
+  }, [ref, handler]);
+};
+```
