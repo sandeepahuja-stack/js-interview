@@ -455,3 +455,43 @@ function sum(a = 0) {
 const a = sum(1)(2)()
 console.log(a)
 ```
+
+
+
+## Custom Hooks
+
+### UsePrev
+
+```
+import "./styles.css";
+import {useEffect, useRef, useState} from 'react'
+
+const usePrev = (currState)=>{
+
+  const prev = useRef(currState);
+  useEffect(()=>{
+    if(prev.current !== currState) {
+      prev.current = currState;
+    }
+  },[currState])
+  
+  return {prevState: prev.current , currState}
+
+}
+export default function App() {
+  const [count, updateCount] = useState(0);
+  const  {prevState, currState}= usePrev(count);
+  return (
+    <div className="App">
+      <button onClick={()=>{
+        updateCount(count => count +1);
+      }}>button</button>
+
+
+      <h1>prev {prevState}</h1>
+      <h2>curr {currState}</h2>
+    </div>
+  );
+}
+
+```
